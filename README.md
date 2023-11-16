@@ -15,3 +15,28 @@ server_1         |       │ Administrator Password │ '34b8b1................f
 server_1         |       └────────────────────────┴────────────────────────────────────────────────────────────────────┘
 
 ```
+
+## api documentation issues 
+
+- INSERT DOCUMENTATION HERE FOR ISSUES THAT YOU PREVIOUSLY FOUND 
+
+
+## api notes for connecting 
+
+- Example endpoint of how to connect: 
+```python
+import requests 
+
+test_url = 'http://localhost:3000/api/v1/users/login'
+
+test_data = {
+    "username": "admin",
+    "password": "34b8b1................f6cd"
+}
+
+```
+
+## api notes for creating dummy data 
+
+
+## api notes for pulling down dummy data 
