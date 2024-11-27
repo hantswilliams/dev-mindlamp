@@ -36,9 +36,9 @@ services:
   server:
     image: ghcr.io/bidmcdigitalpsychiatry/lamp-server:2022
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
+      test: wget --no-verbose --tries=1 --spider http://localhost:3003 || exit 1
     ports:
-      - 3000:3000
+      - 3003:3003
     environment:
       HTTPS: 'off'
       ROOT_KEY: '57874cf5bcdd7acc8b4e76e8108db7fe7a1f9cd1583f41da2e187951597c14bd'

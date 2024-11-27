@@ -8,7 +8,7 @@ a simple test environment file for docker mindlamp
 ## deployment
 - Create a new network called public to connect all externally accessible services.
 ```bash
-docker network create --driver overlay --attachable public
+sudo docker network create --driver overlay --attachable public
 ```
 
 Using your DNS provider of choice, provision a domain name (here we use example.com to represent your domain name and 1.1.1.1 to represent your node's IP address).
