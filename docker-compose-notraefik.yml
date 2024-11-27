@@ -2,7 +2,7 @@ version: '3.7'
 services:
 
   server:
-    image: ghcr.io/bidmcdigitalpsychiatry/lamp-server:2022
+    image: ghcr.io/bidmcdigitalpsychiatry/lamp-server:2023
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
     ports:
