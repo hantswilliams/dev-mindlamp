@@ -10,7 +10,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedByDefault=false"
       - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.websecure.address=:446"
       - "--entrypoints.websecure.http.tls.certResolver=default"
       - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
       - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
@@ -26,9 +26,9 @@ services:
         protocol: tcp
         published: 80
         mode: ingress
-      - target: 443
+      - target: 446
         protocol: tcp
-        published: 443
+        published: 446
         mode: ingress
     networks:
       - public
@@ -57,7 +57,7 @@ services:
       - traefik.http.routers.lamp_server.entryPoints=websecure
       - traefik.http.routers.lamp_server.rule=Host(`mindlamp.api.appliedhealthinformatics.com`)
       - traefik.http.routers.lamp_server.tls.certresolver=default
-      - traefik.http.services.lamp_server.loadbalancer.server.port=3000
+      - traefik.http.services.lamp_server.loadbalancer.server.port=3003
     logging:
       options:
         max-size: "10m"
