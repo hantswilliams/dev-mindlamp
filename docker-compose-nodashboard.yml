@@ -9,7 +9,7 @@ services:
       - "--api=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedByDefault=false"
-      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.address=:83"
       - "--entrypoints.websecure.address=:446"
       - "--entrypoints.websecure.http.tls.certResolver=default"
       - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
@@ -22,9 +22,9 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "traefik-ssl:/data/"
     ports:
-      - target: 80
+      - target: 83
         protocol: tcp
-        published: 80
+        published: 83
         mode: ingress
       - target: 446
         protocol: tcp
