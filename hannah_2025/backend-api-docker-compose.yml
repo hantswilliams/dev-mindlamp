@@ -3,22 +3,19 @@ services:
   server:
     image: ghcr.io/bidmcdigitalpsychiatry/lamp-server:2023
     healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:3011 || exit 1
+      test: wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
     ports:
       - 3011:3000
     environment:
       HTTPS: 'off'
       ROOT_KEY: '57874cf5bcdd7acc8b4e76e8108db7fe7a1f9cd1583f41da2e187951597c14bd'
-      DB: 'mongodb://admin:95883cbd4d258488@sbushpmindlamp-backend-7tt2hi-c86cba-20-62-193-224.traefik.me:27017/'
+      DB: 'mongodb://admin:95883cbd4d258488@mindlamp.mongo.appliedhealthinformatics.com:27017/'
       PUSH_API_GATEWAY: 'https://app-gateway.lamp.digital/'
       PUSH_API_KEY: 'YOUR_PUSH_KEY_HERE'
       DASHBOARD_URL: 'dashboard.lamp.digital'
-      REDIS_HOST: 'redis://sbushpmindlamp-backend-7tt2hi-f02465-20-62-193-224.traefik.me:6379/0'
-      NATS_SERVER: 'http://sbushpmindlamp-backend-7tt2hi-43d205-20-62-193-224.traefik.me:4222'
+      REDIS_HOST: 'redis://mindlamp.redis.appliedhealthinformatics.com:6379'
+      NATS_SERVER: 'http://mindlamp.nats.appliedhealthinformatics.com:4222'
     logging:
       options:
         max-size: "10m"
         max-file: "3"
-
-
-
